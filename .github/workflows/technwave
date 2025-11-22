@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TechnWave PK: Your go-to for games and computer accessories. Quality products at affordable prices.">
+    <title>TechnWave PK - Games & Computer Accessories</title>
+    <link rel="icon" href="https://via.placeholder.com/32x32?text=TW" type="image/x-icon"> <!-- Placeholder favicon -->
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #007bff; color: white; padding: 1rem; text-align: center; }
+        nav a { color: white; margin: 0 1rem; text-decoration: none; }
+        section { padding: 2rem; max-width: 1200px; margin: 0 auto; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+        .product { background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; }
+        .product img { width: 100%; height: auto; }
+        button { background-color: #28a745; color: white; border: none; padding: 0.5rem 1rem; cursor: pointer; border-radius: 4px; }
+        button:hover { background-color: #218838; }
+        form { display: flex; flex-direction: column; max-width: 400px; }
+        input, textarea { margin-bottom: 1rem; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
+        footer { background-color: #333; color: white; text-align: center; padding: 1rem; }
+        #cart { position: fixed; top: 10px; right: 10px; background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: none; max-height: 80vh; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TechnWave PK</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+            <button onclick="showCart()">View Cart</button>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Welcome to TechnWave PK</h2>
+        <p>Your go-to store for the latest games and computer accessories. Quality products at affordable prices!</p>
+        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400&q=80" alt="Store Banner - Gaming Setup" style="width:100%; max-width:800px;">
+    </section>
+
+    <section id="products">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="Call of Duty Game">
+                <h3>Call of Duty: Modern Warfare</h3>
+                <p>$18.00</p>
+                <button onclick="addToCart('Call of Duty: Modern Warfare', 18.00)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="RGB Gaming Mouse">
+                <h3>RGB Gaming Mouse</h3>
+                <p>$9.00</p>
+                <button onclick="addToCart('RGB Gaming Mouse', 9.00)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="Mechanical Keyboard">
+                <h3>Mechanical Keyboard</h3>
+                <p>$24.00</p>
+                <button onclick="addToCart('Mechanical Keyboard', 24.00)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1599669454699-248893623440?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="Wireless Gaming Headset">
+                <h3>Wireless Gaming Headset</h3>
+                <p>$15.00</p>
+                <button onclick="addToCart('Wireless Gaming Headset', 15.00)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="Tekken 7 Game">
+                <h3>Tekken 7</h3>
+                <p>$15.00</p>
+                <button onclick="addToCart('Tekken 7', 15.00)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="GTA V Game">
+                <h3>GTA V</h3>
+                <p>$9.00</p>
+                <button onclick="addToCart('GTA V', 9.00)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="SSD Hard Drive">
+                <h3>500GB SSD Hard Drive</h3>
+                <p>$15.00</p>
+                <button onclick="addToCart('500GB SSD Hard Drive', 15.00)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="RAM Module">
+                <h3>8GB RAM</h3>
+                <p>$12.00</p>
+                <button onclick="addToCart('8GB RAM', 12.00)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="Gaming Laptop">
+                <h3>Gaming Laptop</h3>
+                <p>$150.00</p>
+                <button onclick="addToCart('Gaming Laptop', 150.00)">Add to Cart</button>
+            </div>
+            <!-- Add more products here -->
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>TechnWave PK is dedicated to providing top-notch gaming experiences and essential computer accessories. Founded in 2023, we focus on customer satisfaction and innovation. Based in Pakistan, we ship worldwide!</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <div id="cart">
+        <h3>Your Cart <button onclick="hideCart()" style="float:right; background:none; border:none; color:#333; cursor:pointer;">X</button></h3>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="cart-total">0.00</span></p>
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 TechnWave PK. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        updateCartDisplay();
+
+        function addToCart(product, price) {
+            cart.push({ product, price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
+            alert(`${product} added to cart!`);
+        }
+
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            cartItems.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.product} - $${item.price}`;
+                cartItems.appendChild(li);
+                total += item.price;
+            });
+            cartTotal.textContent = total.toFixed(2);
+        }
+
+        function showCart() {
+            document.getElementById('cart').style.display = 'block';
+        }
+
+        function hideCart() {
+            document.getElementById('cart').style.display = 'none';
+        }
+
+        function clearCart() {
+            cart = [];
+            localStorage.removeItem('cart');
+            updateCartDisplay();
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            alert('Redirecting to checkout...'); // Placeholder - replace with real payment URL
+        }
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Format the message for WhatsApp
+            const fullMessage = `New message from ${name} (${email}):\n\n${message}`;
+            
+            // Open WhatsApp with the message pre-filled (using international format for Pakistani number)
+            const whatsappURL = `https://wa.me/923121843419?text=${encodeURIComponent(fullMessage)}`;
+            window.open(whatsappURL, '_blank');
+            
+            // Reset the form and show confirmation
+            document.getElementById('contact-form').reset();
+            alert('Message sent via WhatsApp! We\'ll get back to you soon.');
+        });
+    </script>
+</body>
+</html>
